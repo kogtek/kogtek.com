@@ -123,7 +123,7 @@ jQuery(document).ready(function($){
 /*-----------------------------------------------------------------------------------*/
 /*  ANIMATE
 /*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function($){
+/*jQuery(document).ready(function($){
 'use strict';
   jQuery('.fade-up, .fade-down, .bounce-in, .flip-in').addClass('no-display');
   jQuery('.bounce-in').one('inview', function() { 
@@ -144,7 +144,7 @@ jQuery(document).ready(function($){
   });
 
 });
-
+*/
 /*-----------------------------------------------------------------------------------*/
 /*  SNOOOOOOOOTH SCROLL - SO SMOOTH
 /*-----------------------------------------------------------------------------------*/
