@@ -143,7 +143,7 @@ blockquote {
 
 .backstretch:before {
     content: '';
-    background-image: url(../images/overlays/04.png);
+    background-image: url(../images/kogtek/arrows-box-business-533189.jpg);
     min-width: 100%;
     height: 100%;
     position: absolute;
@@ -860,7 +860,8 @@ ul.tag-cloud li {
 
 .opaqued {
     padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: #202020;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -870,7 +871,8 @@ ul.tag-cloud li {
 }
 
 .navbar-inverse.opaqued .navbar-nav .dropdown-menu {
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: #202020;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -1218,7 +1220,7 @@ ul.rss li::before {
 }
 
 #footer {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     background-color: #101010;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -1504,7 +1506,6 @@ img.author-box-image {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-
 /*-----------------------------------------------------------------------------------*/
 
 
@@ -1513,11 +1514,11 @@ img.author-box-image {
 
 #footer-wrapper {
     z-index: 1;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #202020;
+    /* background-color: #202020; */
 }
 
 .widget-img {
@@ -1579,7 +1580,7 @@ img.author-box-image {
 /*-----------------------------------------------------------------------------------*/
 
 .divider-section {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
     position: relative;
     overflow: hidden;
     display: block;
@@ -2304,4 +2305,53 @@ img.author-box-image {
     #footer-wrapper {
         position: relative !important;
     }
+}
+
+
+
+
+/** monika's css **/
+#repoImg{
+    max-width: 100%;
+}
+
+
+.main-slider-ovarlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.carousel-left{
+    padding-top: 280px;
+}
+
+.carousel-right{
+    padding-top: 180px;
+}
+
+
+
+@media screen and (max-width:767px) {
+    .carousel-left{
+        padding-top: 65px;
+    }
+    
+    .carousel-right{
+        padding-top: 30px;
+    }
+
+    #repoImg{
+        max-width: 75%;
+    }
+    
+
 }

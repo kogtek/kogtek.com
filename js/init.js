@@ -30,7 +30,7 @@ jQuery(function($) {
 	var windowsHeight = jQuery(window).height();
 	var navHeight = jQuery('navbar-fixed-top').outerHeight();
 	var newHeight = windowsHeight - navHeight + 30;
-    jQuery('#main-slider').css('height', newHeight + 'px');
+    //jQuery('#main-slider').css('height', newHeight + 'px');
     jQuery('#single-page-slider').css('min-height', windowsHeight/3 + 'px');
 
 	//goto top
@@ -111,7 +111,7 @@ jQuery(document).ready(function($){
 		});
 	});
 
-  $('#main-slider .carousel-content').flexVerticalCenter({ cssAttribute: 'padding-top' });
+  //$('#main-slider .carousel-content').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '-15px' });
 
 });
 
