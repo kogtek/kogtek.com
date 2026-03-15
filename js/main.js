@@ -111,6 +111,9 @@
       mobileMenu.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden'; // Prevent background scroll
+      // Move focus to first menu link for screen reader / keyboard users
+      const firstLink = mobileMenu.querySelector('.navbar__mobile-link');
+      if (firstLink) firstLink.focus();
     }
 
     function closeMenu() {
