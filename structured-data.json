@@ -1,0 +1,122 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kogtek",
+    "url": "https://kogtek.com",
+    "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+    "description": "Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@kogtek.com",
+      "contactType": "customer support",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/kogtek",
+      "https://github.com/kogtek",
+      "https://twitter.com/kogtek"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kogtek",
+    "url": "https://kogtek.com",
+    "description": "Kogtek — Data Engineering & AI Consultancy",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://kogtek.com/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Kogtek",
+    "url": "https://kogtek.com",
+    "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+    "description": "Kogtek is a data engineering consultancy specializing in big data pipelines, business intelligence, machine learning, computer vision, and cloud-native data infrastructure on AWS and Azure.",
+    "email": "contact@kogtek.com",
+    "priceRange": "$$",
+    "areaServed": "Worldwide",
+    "knowsAbout": [
+      "Data Engineering",
+      "Big Data Consulting",
+      "Apache Spark",
+      "Apache Hadoop",
+      "AWS",
+      "Azure",
+      "Business Intelligence",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Computer Vision",
+      "ETL Pipeline Development",
+      "Custom Data Pipelines",
+      "Web Scraping",
+      "Data Extraction"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Data Engineering & AI Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Big Data Engineering",
+            "description": "Distributed data pipelines using Apache Spark and Hadoop, deployed on AWS EMR and Azure HDInsight."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Intelligence & Reporting",
+            "description": "BI architectures and reporting layers including executive dashboards and operational drill-downs."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Machine Learning & AI",
+            "description": "End-to-end ML model development and deployment for demand forecasting, anomaly detection, recommendation engines, and churn prediction."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile & Web Development",
+            "description": "Data-driven web and mobile applications with real-time analytics dashboards and ML-powered features."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Computer Vision & Image Processing",
+            "description": "Computer vision systems for quality inspection, object detection, and medical image analysis using deep learning."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Scraping & Data Extraction",
+            "description": "Scalable web scraping and crawling systems handling anti-bot measures, JavaScript rendering, and high-volume extraction."
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/kogtek",
+      "https://github.com/kogtek",
+      "https://twitter.com/kogtek"
+    ]
+  }
+]

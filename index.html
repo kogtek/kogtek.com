@@ -1,273 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Kogtek – We design meaning</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="fa/css/all.min.css" rel="stylesheet">
-    <link href="css/pe-icons.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="icon" href="images/kogtek/kt_logo-1-150x150.png" sizes="32x32">
-<link rel="icon" href="images/kogtek/kt_logo-1-300x300.png" sizes="192x192">
-<link rel="apple-touch-icon-precomposed" href="images/kogtek/kt_logo-1-300x300.png">
-<meta name="msapplication-TileImage" content="images/kogtek/kt_logo-1-300x300.png">
-    <script type="text/javascript">
-    jQuery(document).ready(function($){
-	'use strict';
-      	jQuery('body').backstretch([
-            "images/kogtek/arrows-box-business-533189.jpg",
-            "images/kogtek/arrows-box-business-533189.jpg",
-            "images/kogtek/arrows-box-business-533189.jpg"
-            //"http://placehold.it/800x600",
-            //"http://placehold.it/800x600"
-	    ], {duration: 5000, fade: 500});
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		$("#mapwrapper").gMap({ controls: false,
-         	scrollwheel: false,
-         	markers: [{
-              	latitude:40.7566,
-				longitude: -73.9863,
-          	icon: { image: "images/marker.png",
-              	iconsize: [44,44],
-          		iconanchor: [12,46],
-          		infowindowanchor: [12, 0] } }],
-          	icon: {
-              	image: "images/marker.png",
-             	iconsize: [26, 46],
-              	iconanchor: [12, 46],
-              	infowindowanchor: [12, 0] },
-         	latitude:40.7566,
-         	longitude: -73.9863,
-          	zoom: 14 });
-    });
-    </script>
-</head><!--/head-->
+  <!-- FOUC Prevention: apply theme before first paint (must be first script, inline) -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('kogtek-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <title>Kogtek | Data Engineering, AI &amp; BI Consultancy</title>
+  <meta name="description" content="Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure.">
+  <meta name="author" content="Kogtek">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kogtek.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kogtek.com/">
+  <meta property="og:title" content="Kogtek | Data Engineering, AI &amp; BI Consultancy">
+  <meta property="og:description" content="Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure. Talk to our engineers.">
+  <meta property="og:image" content="https://kogtek.com/images/kogtek/kt_logo-1-300x300.png">
+  <meta property="og:site_name" content="Kogtek">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@kogtek">
+  <meta name="twitter:title" content="Kogtek | Data Engineering, AI &amp; BI Consultancy">
+  <meta name="twitter:description" content="Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure.">
+  <meta name="twitter:image" content="https://kogtek.com/images/kogtek/kt_logo-1-300x300.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/kogtek/kt_logo-1-150x150.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/kogtek/kt_logo-1-300x300.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="images/kogtek/kt_logo-1-300x300.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="fa/css/all.min.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kogtek",
+      "url": "https://kogtek.com",
+      "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+      "description": "Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@kogtek.com",
+        "contactType": "customer support",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/kogtek",
+        "https://github.com/kogtek",
+        "https://twitter.com/kogtek"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Kogtek",
+      "url": "https://kogtek.com",
+      "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+      "description": "Kogtek is a data engineering consultancy specializing in big data pipelines, business intelligence, machine learning, computer vision, and cloud-native data infrastructure on AWS and Azure.",
+      "email": "contact@kogtek.com",
+      "priceRange": "$$",
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Data Engineering", "Big Data Consulting", "Apache Spark", "Apache Hadoop",
+        "AWS", "Azure", "Business Intelligence", "Machine Learning", "Artificial Intelligence",
+        "Computer Vision", "ETL Pipeline Development", "Web Scraping", "Data Extraction"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Data Engineering & AI Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Big Data Engineering", "description": "Distributed data pipelines using Apache Spark and Hadoop, deployed on AWS EMR and Azure HDInsight."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Intelligence & Reporting", "description": "BI architectures and reporting layers including executive dashboards and operational drill-downs."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Machine Learning & AI", "description": "End-to-end ML model development and deployment for demand forecasting, anomaly detection, and churn prediction."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile & Web Development", "description": "Data-driven web and mobile applications with real-time analytics dashboards and ML-powered features."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Computer Vision & Image Processing", "description": "Computer vision systems for quality inspection, object detection, and medical image analysis using deep learning."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Scraping & Data Extraction", "description": "Scalable web scraping and crawling systems handling anti-bot measures, JavaScript rendering, and high-volume extraction."}}
+        ]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/kogtek",
+        "https://github.com/kogtek",
+        "https://twitter.com/kogtek"
+      ]
+    }
+  ]
+  </script>
+</head>
 <body>
-<div id="preloader"></div>
-    <header class="navbar navbar-inverse navbar-fixed-top opaqued" role="banner">
-    <div id="search-wrapper">
-        <div class="container">
-            <input id="search-box" placeholder="Search">
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ======================================================================
+       Navigation
+  ====================================================================== -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__container">
+
+        <!-- Logo -->
+        <a class="navbar__logo" href="#hero" aria-label="Kogtek — go to homepage">KOGTEK</a>
+
+        <!-- Desktop Links -->
+        <ul class="navbar__links" role="list">
+          <li><a class="navbar__link active" href="#hero">Home</a></li>
+          <li><a class="navbar__link" href="#about">About Us</a></li>
+          <li><a class="navbar__link" href="#services">Services</a></li>
+          <li><a class="navbar__link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Desktop Actions -->
+        <div class="navbar__actions">
+          <!-- Theme Toggle -->
+          <button
+            class="btn-theme-toggle"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            type="button"
+          >
+            <!-- Sun icon (shown in light mode) -->
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon icon (shown in dark mode) -->
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <!-- CTA Button -->
+          <a class="btn btn--primary" href="#contact">Get In Touch</a>
         </div>
-    </div>
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#main-slider"><h1>KOGTEK</h1></a>
+
+        <!-- Mobile Hamburger -->
+        <button
+          class="navbar__hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div><!-- /.navbar__container -->
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav
+      id="mobile-menu"
+      class="navbar__mobile-menu"
+      role="navigation"
+      aria-label="Mobile navigation"
+    >
+      <a class="navbar__mobile-link active" href="#hero">Home</a>
+      <a class="navbar__mobile-link" href="#about">About Us</a>
+      <a class="navbar__mobile-link" href="#services">Services</a>
+      <a class="navbar__mobile-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       Main Content
+  ====================================================================== -->
+  <main id="main">
+
+    <!-- ====================================================================
+         Hero Section
+    ==================================================================== -->
+    <section id="hero" class="hero" aria-labelledby="hero-headline">
+      <div class="hero__container">
+
+        <!-- Eyebrow label -->
+        <p class="hero__eyebrow">
+          <i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>
+          Technology Consulting
+        </p>
+
+        <!-- H1 Headline -->
+        <h1 class="hero__headline" id="hero-headline">
+          Data Engineering <em>Expertise.</em><br>
+          Production&#8209;Ready Results.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero__subheadline">
+          We help engineering teams at growing companies design and ship scalable data pipelines,
+          BI systems, and AI models &mdash; built for the real world, not demos.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#contact">Talk to Our Engineers</a>
+          <a class="btn btn--ghost btn--lg" href="#services">See What We Build</a>
+        </div>
+
+        <!-- Supporting text -->
+        <p class="hero__supporting">
+          No retainers. No bloated proposals. Just focused expertise on the problems that matter.
+        </p>
+
+      </div><!-- /.hero__container -->
+
+      <!-- Scroll indicator -->
+      <a class="hero__scroll-indicator" href="#about" aria-label="Scroll to About section">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ====================================================================
+         About Section
+    ==================================================================== -->
+    <section id="about" class="about section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__layout">
+
+          <!-- Content -->
+          <div class="about__content">
+            <p class="section-eyebrow" data-reveal>About Kogtek</p>
+            <h2 class="section-title" id="about-title" data-reveal>
+              Built by Engineers, for Engineering Teams
+            </h2>
+            <p class="about__lead" data-reveal>
+              Kogtek is a data engineering consultancy founded to solve problems that generalist agencies can't.
+              We specialize in the full data stack &mdash; from raw ingestion and distributed processing with
+              Apache Spark and Hadoop, to cloud-native pipelines on AWS and Azure, to the ML models and BI
+              dashboards that turn that data into decisions.
+            </p>
+            <p class="about__body" data-reveal>
+              We don&rsquo;t staff projects with account managers. The engineers who scope your work are the
+              engineers who build it. That means faster delivery, fewer handoffs, and solutions that hold up
+              in production &mdash; not just in proof-of-concept.
+            </p>
+            <p class="about__body" data-reveal>
+              Our clients are mid-to-large companies with real data complexity: organizations that have
+              outgrown spreadsheets and off-the-shelf tools and need a technical partner who can operate
+              at scale. Whether you need a single data pipeline or an end-to-end AI system, we bring the
+              depth to do it right the first time.
+            </p>
+            <div data-reveal>
+              <a class="btn btn--primary" href="#contact">Work With Us</a>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#main-slider">Home</a></li>
-                    
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-                    <!-- <li><a href="#blog">Blog</a></li>
-                    <li><a href="#pricing">Pricing</a></li> -->
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- <li><span class="search-trigger"><i class="fa fa-search"></i></span></li> -->
-                </ul>
+          </div><!-- /.about__content -->
+
+          <!-- Stats -->
+          <div class="about__stats" data-reveal-group>
+            <div class="stat-card" data-reveal>
+              <span class="stat-card__value">AWS &amp; Azure</span>
+              <span class="stat-card__label">Cloud-native pipelines on both major platforms</span>
             </div>
-        </div>
-    </header><!--/header-->
-
-    <section id="main-slider" class="no-margin main-slider-ovarlay">
-        <div class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="carousel-content pull-left carousel-left text-center col-sm-6 col-xs-12">
-                                	<span style="display: none;" class="home-icon pe-7s-gleam bounce-in"></span>
-                                    <h2 class="boxed animation animated-item-1 fade-down">We design meaning</h2> <br/>
-                                    <p class="boxed animation animated-item-2 fade-up">CREATING DATA-DRIVEN SOLUTIONS</p>
-                                    <br>
-                                    <!-- <a class="btn btn-md animation bounce-in" href="#">Learn More</a> -->
-                                </div>
-                                <div class="carousel-content pull-right carousel-right text-center col-sm-6 col-xs-12">
-                                    <img src="images/kogtek/reports_KOGTEK.png" id="repoImg"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.item-->
-            </div><!--/.carousel-inner-->
-        </div><!--/.carousel-->
-    </section><!--/#main-slider-->
-
-    <div id="content-wrapper" >
-            <section id="about-us" class="white">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="center gap fade-down section-heading">
-                                    <h2 class="main-title">About Us</h2>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1 fade-up">
-                                <p>Our company aims to create quality data driven solutions that will meet the needs of all our customers. We offer a broad range of services in data processing such as Big Data and Machine Learning and strive to create meaningful reporting solutions and BI strategies. Our team is always determined to find the best solution for the task at hand and provide the expertise our customers need to implement their projects.</p>    
-                            </div>
-                            <div class="col-md-4 fade-up">
-        
-                            </div>
-                        </div>
-                        <div class="gap"></div>
-                    </div>
-                </section>
-        
-
-        <section id="services" class="divider-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="center gap fade-down section-heading">
-                            <h2 class="main-title">Stuff We Do</h2>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-database fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Big data</h3>
-                                <p>Transform your unstructured datasets into meaningful structures using Spark and Hadoop on both AWS and Azure. Prepare your data to use BI techniques and ML algorithms.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fas fa-chart-area fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Reports & BI</h3>
-                                <p>Transform your data into meaning with reporting and BI techniques. Get insight from your data that will help you make better decisions.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-mobile fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Mobile & Web development</h3>
-                                <p>Create end-to-end data-driven mobile and web applications that are completely scalable. Get meaningful data from your applications and improve them using ML algorithms and user behavior.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
-                <div class="gap"></div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-cogs fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Machine learning & AI</h3>
-                                <p>Get the missing piece of the puzzle... Use ML algorithms to extract additional knowledge from your data. Create strategy using AI that will improve your future decisions.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-eye fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Image processing</h3>
-                                <p>Having problems with your computer vision? We can help you see better. With the help of image processing algorithms and deep learning you can extract any real world scenario into meaningful data.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-12">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fas fa-spider fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Web scraping</h3>
-                                <p>No API? No problem! With web scraping and web crawling, you can still get the data from any website and generate your own data.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
+            <div class="stat-card" data-reveal>
+              <span class="stat-card__value">Spark &amp; Hadoop</span>
+              <span class="stat-card__label">Distributed processing for terabyte-scale datasets</span>
             </div>
-            <div class="gap"></div>
-        </section>
+            <div class="stat-card" data-reveal>
+              <span class="stat-card__value">End-to-End</span>
+              <span class="stat-card__label">From raw ingestion to production ML &amp; BI</span>
+            </div>
+          </div><!-- /.about__stats -->
 
-            <section id="contact" class="white">
-                <div class="container">
-                	<div class="gap"></div>
-                    <div class="center gap fade-down section-heading">
-                        <h2 class="main-title">Get In Touch</h2>
-                        <hr>
-                        <h4>
-                        <span class="icon icon-envelop"></span> <a href="#">contact@kogtek.com</a> <br/>
-                        </h4>
-                        <div class="gap"></div>
-                        <h3>or you can find us on social media</h3>
-                        <hr>
-                        <div class="col-sm-12 text-center">
-                            <a href="https://www.linkedin.com/company/kogtek" target="_blank"><i class="fab fa-linkedin fa-4x"></i></a>
-                            <a href="https://github.com/kogtek" target="_blank" > <i class="fab fa-github-square fa-4x"></i></a>
-                            <a href="https://twitter.com/kogtek" target="_blank"><i class="fab fa-twitter-square fa-4x"></i></a>
-                            <a href="https://www.facebook.com/kogtek" target="_blank"><i class="fab fa-facebook-square fa-4x"></i></a>
-                            <a href="https://www.instagram.com/kogtek_com/" target="_blank" > <i class="fab fa-instagram fa-4x"></i></a>
-                        </div>    
-                    </div>
-                    
-                    <div class="gap"></div>
-                </div>
-            </section>
+        </div><!-- /.about__layout -->
+      </div><!-- /.container -->
+    </section>
 
+    <!-- ====================================================================
+         Services Section
+    ==================================================================== -->
+    <section id="services" class="services section" aria-labelledby="services-title">
+      <div class="container">
 
-            
+        <!-- Section Header -->
+        <div class="section-header">
+          <p class="section-eyebrow" data-reveal>Our Capabilities</p>
+          <h2 class="section-title" id="services-title" data-reveal>What We Build</h2>
+          <p class="section-subtitle" data-reveal>
+            Deep specialization across the modern data stack &mdash; from raw pipelines to production AI.
+          </p>
         </div>
 
-        <div id="footer-wrapper">
-            <footer id="footer" class="text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            &copy; 2019 KOGTEK All Rights Reserved. 
-                        </div>
-                        <!-- <div class="col-sm-4">
-                            <ul class="pull-right">
-                                <li><a id="gototop" class="gototop" href="#"><i class="fa fa-chevron-up"></i></a></li>
-                            </ul>
-                        </div> -->
-                    </div>
-                </div>
-            </footer><!--/#footer-->
+        <!-- Services Grid -->
+        <div class="services__grid" data-reveal-group>
+
+          <!-- Service 1: Big Data Engineering -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="service-card__title">Big Data Engineering</h3>
+            <p class="service-card__description">
+              We design and implement distributed data pipelines using Apache Spark and Hadoop,
+              deployed on AWS EMR and Azure HDInsight. Whether you&rsquo;re processing terabytes of
+              streaming events or migrating a legacy warehouse to a modern cloud architecture,
+              we build infrastructure that scales with your data &mdash; not against it.
+            </p>
+          </article>
+
+          <!-- Service 2: Business Intelligence -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <h3 class="service-card__title">Business Intelligence &amp; Reporting</h3>
+            <p class="service-card__description">
+              Raw data without insight is just storage cost. We design BI architectures and reporting
+              layers that surface the metrics your team actually needs &mdash; from executive dashboards
+              to operational drill-downs. We work with industry-standard tools and build on top of your
+              existing data warehouse or lake.
+            </p>
+          </article>
+
+          <!-- Service 3: Machine Learning & AI -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="service-card__title">Machine Learning &amp; AI</h3>
+            <p class="service-card__description">
+              We build and deploy ML models that solve specific business problems: demand forecasting,
+              anomaly detection, recommendation engines, churn prediction. Our engineers take models
+              from experimentation to production &mdash; with monitoring, retraining pipelines, and
+              integration into your existing systems built in from the start.
+            </p>
+          </article>
+
+          <!-- Service 4: Mobile & Web Development -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="service-card__title">Mobile &amp; Web Development</h3>
+            <p class="service-card__description">
+              We develop data-driven web and mobile applications where the backend intelligence is
+              the product. From real-time analytics dashboards to user-facing ML features, we build
+              full-stack applications that are architected around the data layer &mdash; scalable,
+              maintainable, and instrumented from day one.
+            </p>
+          </article>
+
+          <!-- Service 5: Computer Vision -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3 class="service-card__title">Computer Vision &amp; Image Processing</h3>
+            <p class="service-card__description">
+              We build computer vision systems for industries where visual data is mission-critical:
+              quality inspection in manufacturing, object detection in logistics, medical image analysis
+              in healthcare. Using deep learning and classical image processing techniques, we turn
+              unstructured visual input into structured, actionable output.
+            </p>
+          </article>
+
+          <!-- Service 6: Web Scraping -->
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-spider"></i>
+            </div>
+            <h3 class="service-card__title">Web Scraping &amp; Data Extraction</h3>
+            <p class="service-card__description">
+              When there&rsquo;s no API, we build the pipeline anyway. We engineer robust, scalable
+              web scraping and crawling systems capable of handling anti-bot measures, dynamic
+              JavaScript rendering, and high-volume extraction at schedule. The result is a clean,
+              structured data feed your team can actually use.
+            </p>
+          </article>
+
+        </div><!-- /.services__grid -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ====================================================================
+         Contact Section
+    ==================================================================== -->
+    <section id="contact" class="contact section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__inner">
+
+          <p class="section-eyebrow" data-reveal>Get In Touch</p>
+
+          <h2 class="section-title" id="contact-title" data-reveal>
+            Let&rsquo;s Solve a Hard Problem Together
+          </h2>
+
+          <p class="contact__description" data-reveal>
+            If you have a data challenge worth solving, we want to hear about it.
+            Reach out &mdash; we respond to every serious inquiry within one business day.
+          </p>
+
+          <a
+            class="contact__email"
+            href="mailto:contact@kogtek.com"
+            data-reveal
+            aria-label="Send email to contact@kogtek.com"
+          >
+            contact@kogtek.com
+          </a>
+
+          <p class="contact__socials-label" data-reveal>Or find us on social media</p>
+
+          <div class="contact__socials" data-reveal>
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/company/kogtek"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kogtek on LinkedIn"
+            >
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/kogtek"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kogtek on GitHub"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://twitter.com/kogtek"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kogtek on Twitter / X"
+            >
+              <i class="fab fa-x-twitter" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div><!-- /.contact__inner -->
+      </div><!-- /.container -->
+    </section>
+
+  </main><!-- /#main -->
+
+  <!-- ======================================================================
+       Footer
+  ====================================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a class="footer__logo" href="#hero" aria-label="Kogtek — back to top">KOGTEK</a>
+          <p class="footer__tagline">
+            Data engineering consultancy &mdash; pipelines, AI, and BI built for scale.
+          </p>
         </div>
 
-    <script src="js/plugins.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWDPCiH080dNCTYC-uprmLOn2mt2BMSUk&amp;sensor=true"></script>
-    <script src="js/init.js"></script>
+        <!-- Navigation -->
+        <div>
+          <p class="footer__nav-title">Navigation</p>
+          <ul class="footer__nav-links" role="list">
+            <li><a class="footer__nav-link" href="#hero">Home</a></li>
+            <li><a class="footer__nav-link" href="#about">About Us</a></li>
+            <li><a class="footer__nav-link" href="#services">Services</a></li>
+            <li><a class="footer__nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <p class="footer__nav-title">Services</p>
+          <ul class="footer__nav-links" role="list">
+            <li><a class="footer__nav-link" href="#services">Big Data Engineering</a></li>
+            <li><a class="footer__nav-link" href="#services">Business Intelligence</a></li>
+            <li><a class="footer__nav-link" href="#services">Machine Learning &amp; AI</a></li>
+            <li><a class="footer__nav-link" href="#services">Computer Vision</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer__grid -->
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Kogtek. All rights reserved.
+        </p>
+        <p class="footer__copyright">
+          Data engineering consultancy
+        </p>
+      </div>
+
+    </div><!-- /.container -->
+  </footer>
+
+  <!-- ======================================================================
+       Scripts (defer — non-blocking)
+  ====================================================================== -->
+  <script src="js/theme-manager.js" defer></script>
+  <script src="js/main.js" defer></script>
+
 </body>
 </html>
