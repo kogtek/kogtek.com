@@ -4,7 +4,7 @@
   <!-- Single-page site: only the root URL is indexable -->
   <url>
     <loc>https://kogtek.com/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

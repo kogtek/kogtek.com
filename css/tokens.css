@@ -1,18 +1,25 @@
 /* ==========================================================================
    tokens.css — CSS Custom Properties (Design Tokens)
-   Kogtek Agency Website
+   Kogtek Agency Website — 2026 brand
+   Source: kogtek_web_brand_assets/styles/colors.json
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    Brand Palette (raw values — not used directly in components)
    -------------------------------------------------------------------------- */
 :root {
-  --color-brand-navy:      #0B1629;
-  --color-brand-slate:     #1E2D45;
-  --color-brand-teal:      #00C5A8;
-  --color-brand-teal-dim:  #009F88;
-  --color-brand-blue:      #1A78C2;
-  --color-brand-white:     #F4F7FA;
+  --color-brand-navy:      #162437;  /* Deep Navy — wordmark, headings, dark surfaces */
+  --color-brand-blue:      #008EFE;  /* Electric Blue — lambda strokes, icons, display accents */
+  --color-brand-sky:       #52ADFF;  /* Sky Blue — secondary accents, links on navy */
+  --color-brand-gray:      #E8EDF2;  /* Soft Gray — dividers and borders */
+  --color-brand-off-white: #F7F9FC;  /* Off White — soft sections */
+  --color-brand-white:     #FFFFFF;
+
+  /* Derived — Electric Blue is 3.33:1 on white, so small text and buttons
+     use a deeper blue that clears WCAG AA (4.99:1 on white). */
+  --color-brand-action:      #006DDB;
+  --color-brand-action-dark: #005BB8;
+  --color-brand-ink:         #0B131E;  /* deepest navy, dark-mode closing band */
 }
 
 /* --------------------------------------------------------------------------
@@ -20,50 +27,63 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Backgrounds */
-  --bg-base:        #F4F7FA;
+  --bg-base:        #FFFFFF;
   --bg-surface:     #FFFFFF;
-  --bg-surface-alt: #EDF1F7;
+  --bg-surface-alt: #F7F9FC;
   --bg-nav:         #FFFFFF;
-  --bg-hero:        #0B1629;
-  --bg-footer:      #0B1629;
+  --bg-inverse:     #162437;  /* contact band + footer */
 
   /* Text */
-  --text-primary:   #0B1629;
-  --text-secondary: #3D5170;
-  --text-muted:     #6B82A0;
-  --text-on-dark:   #F4F7FA;
-  --text-on-accent: #0B1629;
+  --text-primary:   #162437;  /* 15.6:1 on white */
+  --text-secondary: #46566B;  /* 7.5:1 on white */
+  --text-muted:     #5B6B80;  /* 5.4:1 on white */
+  --text-on-accent: #FFFFFF;
+
+  /* Text on the inverse (navy) band — same in both themes */
+  --text-on-inverse:           #FFFFFF;
+  --text-on-inverse-secondary: #B4C2D3;  /* 8.6:1 on navy */
+  --text-on-inverse-muted:     #94A5BA;  /* 6.2:1 on navy */
 
   /* Accent */
-  --accent-primary:           #00C5A8;
-  --accent-primary-hover:     #009F88;
-  --accent-secondary:         #1A78C2;
-  --accent-secondary-hover:   #135E9B;
+  --accent-primary:      #008EFE;  /* graphics + large display text only */
+  --accent-text:         #006DDB;  /* links, eyebrows, small text */
+  --accent-text-hover:   #005BB8;
+  --accent-button:       #006DDB;
+  --accent-button-hover: #005BB8;
+  --accent-tint:         rgba(0, 142, 254, 0.08);
+  --accent-tint-strong:  rgba(0, 142, 254, 0.14);
+
+  /* Logo — the navy portion of the mark follows this; blue strokes never change */
+  --logo-ink: #162437;
 
   /* Borders */
-  --border-default: #D0DAE8;
-  --border-muted:   #E4EAF2;
-  --border-strong:  #9DB0C8;
+  --border-default: #E8EDF2;
+  --border-muted:   #EEF2F6;
+  --border-strong:  #C9D3DE;
+
+  /* Hero decoration */
+  --hero-dot:  rgba(22, 36, 55, 0.14);
+  --hero-glow: rgba(0, 142, 254, 0.10);
 
   /* Semantic */
   --color-success: #16A34A;
   --color-error:   #DC2626;
   --color-warning: #D97706;
-  --color-info:    #1A78C2;
+  --color-info:    #006DDB;
 
-  /* Shadows */
-  --shadow-sm:   0 1px 3px rgba(11, 22, 41, 0.08);
-  --shadow-md:   0 4px 16px rgba(11, 22, 41, 0.12);
-  --shadow-lg:   0 8px 32px rgba(11, 22, 41, 0.16);
-  --shadow-xl:   0 16px 48px rgba(11, 22, 41, 0.20);
-  --shadow-glow: 0 0 24px rgba(0, 197, 168, 0.30);
+  /* Shadows (navy-tinted) */
+  --shadow-sm:   0 1px 2px rgba(22, 36, 55, 0.06);
+  --shadow-md:   0 4px 16px rgba(22, 36, 55, 0.08);
+  --shadow-lg:   0 12px 32px rgba(22, 36, 55, 0.10);
+  --shadow-xl:   0 24px 56px rgba(22, 36, 55, 0.14);
+  --shadow-glow: 0 0 0 4px rgba(0, 142, 254, 0.12);
 
   /* Typography — Font Families */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
 
   /* Typography — Weights */
-  --font-light:     300;
   --font-regular:   400;
   --font-medium:    500;
   --font-semibold:  600;
@@ -80,6 +100,10 @@
   --text-3xl:  2rem;
   --text-4xl:  2.75rem;
   --text-5xl:  3.75rem;
+
+  /* Typography — Tracking (brand headings run tight) */
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.025em;
 
   /* Spacing Scale (4px base unit) */
   --space-1:  0.25rem;
@@ -101,13 +125,14 @@
 
   /* Border Radius */
   --radius-sm:   6px;
-  --radius-md:   8px;
-  --radius-lg:   14px;
+  --radius-md:   8px;   /* brand button radius */
+  --radius-lg:   12px;
   --radius-xl:   16px;
+  --radius-2xl:  20px;
   --radius-full: 9999px;
 
   /* Container Widths */
-  --container-max:    1280px;
+  --container-max:    1200px;
   --container-wide:   1440px;
   --container-narrow: 800px;
 
@@ -132,43 +157,49 @@
    -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   /* Backgrounds */
-  --bg-base:        #0B1629;
-  --bg-surface:     #1E2D45;
-  --bg-surface-alt: #162035;
-  --bg-nav:         #0D1A30;
-  --bg-hero:        #060E1C;
-  --bg-footer:      #060E1C;
+  --bg-base:        #111C2B;
+  --bg-surface:     #182739;
+  --bg-surface-alt: #142132;
+  --bg-nav:         #111C2B;
+  --bg-inverse:     #0B131E;
 
   /* Text */
-  --text-primary:   #E8EDF5;
-  --text-secondary: #A8BAD4;
-  --text-muted:     #7090B4;
-  --text-on-dark:   #E8EDF5;
-  --text-on-accent: #0B1629;
+  --text-primary:   #F2F5F9;  /* 15.7:1 on base */
+  --text-secondary: #B4C2D3;  /* 9.5:1 on base */
+  --text-muted:     #8B9CB2;  /* 6.1:1 on base */
+  --text-on-accent: #FFFFFF;
 
-  /* Accent (unchanged — vivid against dark) */
-  --accent-primary:         #00C5A8;
-  --accent-primary-hover:   #00E5C5;
-  --accent-secondary:       #3A9AE8;
-  --accent-secondary-hover: #5AAFE8;
+  /* Accent */
+  --accent-primary:      #008EFE;
+  --accent-text:         #52ADFF;  /* 7.2:1 on base */
+  --accent-text-hover:   #84C5FF;
+  --accent-button:       #006DDB;
+  --accent-button-hover: #005BB8;
+  --accent-tint:         rgba(0, 142, 254, 0.12);
+  --accent-tint-strong:  rgba(0, 142, 254, 0.20);
+
+  --logo-ink: #FFFFFF;
 
   /* Borders */
-  --border-default: #2C3F5C;
-  --border-muted:   #1E2D45;
-  --border-strong:  #4A6080;
+  --border-default: #22344B;
+  --border-muted:   #1C2C40;
+  --border-strong:  #33475F;
+
+  --hero-dot:  rgba(180, 194, 211, 0.12);
+  --hero-glow: rgba(0, 142, 254, 0.16);
 
   /* Semantic */
   --color-success: #22C55E;
   --color-error:   #F87171;
   --color-warning: #FBBF24;
-  --color-info:    #60A5FA;
+  --color-info:    #52ADFF;
 
-  /* Shadows (stronger in dark — subtle glow) */
-  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.30);
-  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.40);
-  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.50);
-  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.60);
-  --shadow-glow: 0 0 32px rgba(0, 197, 168, 0.20);
+  /* Shadows */
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg:   0 12px 32px rgba(0, 0, 0, 0.40);
+  --shadow-xl:   0 24px 56px rgba(0, 0, 0, 0.50);
+  --shadow-glow: 0 0 0 4px rgba(0, 142, 254, 0.25);
 }
 
 /* --------------------------------------------------------------------------
@@ -176,40 +207,50 @@
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg-base:        #0B1629;
-    --bg-surface:     #1E2D45;
-    --bg-surface-alt: #162035;
-    --bg-nav:         #0D1A30;
-    --bg-hero:        #060E1C;
-    --bg-footer:      #060E1C;
+    --bg-base:        #111C2B;
+    --bg-surface:     #182739;
+    --bg-surface-alt: #142132;
+    --bg-nav:         #111C2B;
+    --bg-inverse:     #0B131E;
 
-    --text-primary:   #E8EDF5;
-    --text-secondary: #A8BAD4;
-    --text-muted:     #7090B4;
-    --text-on-dark:   #E8EDF5;
-    --text-on-accent: #0B1629;
+    --text-primary:   #F2F5F9;
+    --text-secondary: #B4C2D3;
+    --text-muted:     #8B9CB2;
+    --text-on-accent: #FFFFFF;
 
-    --accent-primary:         #00C5A8;
-    --accent-primary-hover:   #00E5C5;
-    --accent-secondary:       #3A9AE8;
-    --accent-secondary-hover: #5AAFE8;
+    --accent-primary:      #008EFE;
+    --accent-text:         #52ADFF;
+    --accent-text-hover:   #84C5FF;
+    --accent-button:       #006DDB;
+    --accent-button-hover: #005BB8;
+    --accent-tint:         rgba(0, 142, 254, 0.12);
+    --accent-tint-strong:  rgba(0, 142, 254, 0.20);
 
-    --border-default: #2C3F5C;
-    --border-muted:   #1E2D45;
-    --border-strong:  #4A6080;
+    --logo-ink: #FFFFFF;
+
+    --border-default: #22344B;
+    --border-muted:   #1C2C40;
+    --border-strong:  #33475F;
+
+    --hero-dot:  rgba(180, 194, 211, 0.12);
+    --hero-glow: rgba(0, 142, 254, 0.16);
 
     --color-success: #22C55E;
     --color-error:   #F87171;
     --color-warning: #FBBF24;
-    --color-info:    #60A5FA;
+    --color-info:    #52ADFF;
 
-    --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.30);
-    --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.40);
-    --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.50);
-    --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.60);
-    --shadow-glow: 0 0 32px rgba(0, 197, 168, 0.20);
+    --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.30);
+    --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-lg:   0 12px 32px rgba(0, 0, 0, 0.40);
+    --shadow-xl:   0 24px 56px rgba(0, 0, 0, 0.50);
+    --shadow-glow: 0 0 0 4px rgba(0, 142, 254, 0.25);
   }
 }
+
+/* Native controls and scrollbars follow the active theme */
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
 
 /* --------------------------------------------------------------------------
    Theme Icon Visibility

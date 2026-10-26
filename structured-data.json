@@ -4,7 +4,7 @@
     "@type": "Organization",
     "name": "Kogtek",
     "url": "https://kogtek.com",
-    "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+    "logo": "https://kogtek.com/brand/icons/kogtek-app-icon.png",
     "description": "Kogtek is a specialist data engineering consultancy. We build big data pipelines, BI dashboards, ML models, and computer vision systems on AWS and Azure.",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -38,7 +38,7 @@
     "@type": "ProfessionalService",
     "name": "Kogtek",
     "url": "https://kogtek.com",
-    "logo": "https://kogtek.com/images/kogtek/kt_logo-1-300x300.png",
+    "logo": "https://kogtek.com/brand/icons/kogtek-app-icon.png",
     "description": "Kogtek is a data engineering consultancy specializing in big data pipelines, business intelligence, machine learning, computer vision, and cloud-native data infrastructure on AWS and Azure.",
     "email": "contact@kogtek.com",
     "priceRange": "$$",
